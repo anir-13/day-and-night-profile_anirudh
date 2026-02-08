@@ -1,0 +1,355 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.profile {
+  width: 180px;
+  border-radius: 50%;
+  animation: float 6s infinite ease-in-out;
+}
+
+@keyframes float {
+  50% { transform: translateY(-20px); }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 40px;
+}
+
+.card, .project {
+  padding: 25px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.1);
+  transition: transform 0.5s;
+}
+
+.card:hover, .project:hover {
+  transform: translateY(-15px);
+}
+
+.socials a {
+  font-size: 2.5rem;
+  margin: 20px;
+  transition: transform 0.4s;
+}
+
+.socials a:hover {
+  transform: scale(1.4);
+}
+
+/* HOME HERO */
+.home-hero {
+  min-height: 100vh;
+  padding-top: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* PROFILE */
+.profile.large {
+  width: 220px;
+  border-radius: 50%;
+  margin-bottom: 25px;
+  animation: float 6s ease-in-out infinite;
+  border: 4px solid rgba(255,255,255,0.4);
+}
+
+/* NAME */
+.name-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  letter-spacing: 4px;
+  animation: slideIn 1.4s ease forwards;
+}
+
+.surname {
+  font-size: 3rem;
+  opacity: 0.85;
+  animation: glowPulse 3s infinite;
+}
+
+/* GLOW EFFECT */
+.glow {
+  animation: glowPulse 3s infinite;
+}
+
+@keyframes glowPulse {
+  0% { text-shadow: 0 0 10px currentColor; }
+  50% { text-shadow: 0 0 30px currentColor; }
+  100% { text-shadow: 0 0 10px currentColor; }
+}
+
+/* SUBTITLE */
+.anime-line {
+  font-size: 1.4rem;
+  margin-top: 15px;
+  opacity: 0;
+  animation: fadeUp 1.2s ease forwards;
+  animation-delay: 0.6s;
+}
+
+/* BIO */
+.bio {
+  max-width: 720px;
+  margin-top: 25px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  opacity: 0;
+  animation: fadeUp 1.2s ease forwards;
+  animation-delay: 1s;
+}
+
+/* QUOTE */
+.quote {
+  margin-top: 40px;
+  font-style: italic;
+  opacity: 0.7;
+  animation: fadeUp 1.2s ease forwards;
+  animation-delay: 1.4s;
+}
+
+/* FLOATING ANIME CIRCLES */
+.anime-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+  animation: drift 18s linear infinite;
+}
+
+.c1 { width: 200px; height: 200px; top: 10%; left: 10%; }
+.c2 { width: 300px; height: 300px; bottom: 15%; right: 10%; animation-duration: 25s; }
+.c3 { width: 150px; height: 150px; top: 40%; right: 25%; animation-duration: 20s; }
+
+@keyframes drift {
+  from { transform: translateY(0); }
+  to { transform: translateY(-80px); }
+}
+
+/* DAY VS NIGHT VISUAL DIFFERENCE */
+body.day .anime-circle {
+  background: #ffcc00;
+}
+
+body.night .anime-circle {
+  background: #64ffda;
+}
+
+.name-title span {
+  display: inline-block;
+  animation: letterPop 0.8s ease forwards;
+}
+
+@keyframes letterPop {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.profile:hover {
+  transform: scale(1.05) rotate(1deg);
+  transition: transform 0.4s ease;
+}
+
+/* INTERESTS HERO */
+.interests-hero {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.subtitle {
+  opacity: 0.7;
+  margin-top: 10px;
+  animation: fadeUp 1.2s ease forwards;
+}
+
+/* INTEREST WALL */
+.interest-wall {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-auto-rows: 260px;
+  gap: 25px;
+  padding: 40px 8% 100px;
+}
+
+/* TILE SIZES */
+.interest-tile.tall {
+  grid-row: span 2;
+}
+
+.interest-tile.wide {
+  grid-column: span 2;
+}
+
+/* TILE */
+.interest-tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  cursor: pointer;
+  animation: fadeUp 1s ease forwards;
+}
+
+.interest-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+/* OVERLAY */
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+  color: white;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.interest-tile:hover img {
+  transform: scale(1.15);
+}
+
+.interest-tile:hover .overlay {
+  opacity: 1;
+}
+
+/* NIGHT MODE GLOW */
+body.night .interest-tile {
+  box-shadow: 0 0 25px rgba(100,255,218,0.25);
+}
+/* PROJECT HERO */
+.projects-hero {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* PROJECT ZONE */
+.project-zone {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding: 40px 8% 120px;
+}
+
+/* PROJECT CARD */
+.project-card {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  min-height: 320px;
+  position: relative;
+}
+
+.project-card.reverse {
+  flex-direction: row-reverse;
+}
+
+/* BACKGROUND IMAGE */
+.project-bg {
+  flex: 1;
+  height: 320px;
+  border-radius: 25px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 1s ease;
+}
+
+/* CONTENT */
+.project-content {
+  flex: 1;
+  padding: 30px;
+  border-radius: 25px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(8px);
+  animation: fadeUp 1.2s ease forwards;
+}
+
+/* TAGS */
+.tag {
+  display: inline-block;
+  margin-top: 15px;
+  margin-right: 10px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  background: rgba(0,0,0,0.15);
+}
+
+/* HOVER EFFECT */
+.project-card:hover .project-bg {
+  transform: scale(1.08);
+}
+
+.project-card:hover .project-content {
+  transform: translateY(-10px);
+  transition: transform 0.6s ease;
+}
+
+/* NIGHT MODE INTENSITY */
+body.night .project-content {
+  box-shadow: 0 0 30px rgba(100,255,218,0.35);
+}
+
+body.night .tag {
+  background: rgba(100,255,218,0.2);
+  color: #64ffda;
+}
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+.slide-in {
+  animation: slideIn 1.2s ease forwards;
+}
+
+.delay {
+  animation-delay: 0.3s;
+}
+
+.delay2 {
+  animation-delay: 0.6s;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.project-card {
+  cursor: pointer;
+}
+
