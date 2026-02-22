@@ -19,38 +19,38 @@ The website showcases my projects, interests, and contact information in a visua
 ---
 
 ## 📁 Project Structure
+
+```
 portfolio/
 │
-├── index.html # Home page
-├── interests.html # Interests showcase
-├── projects.html # Project gallery
-├── contact.html # Contact section
+├── index.html
+├── interests.html
+├── projects.html
+├── contact.html
 │
 ├── css/
-│ ├── base.css # Core layout styles
-│ ├── day.css # Day theme styles
-│ ├── night.css # Night theme styles
-│ └── animations.css # Animations and transitions
+│   ├── base.css
+│   ├── day.css
+│   ├── night.css
+│   └── animations.css
 │
 ├── js/
-│ ├── theme.js # Theme toggle logic
-│ └── animations.js # Additional animation effects
+│   ├── theme.js
+│   └── animations.js
 │
 └── assets/
-├── profile.jpeg
-├── anime images
-└── project image
+    ├── profile.jpeg
+    ├── anime-images/
+    └── project-images/
+```
 
-Deployment
+## Deployment
 
 This project is deployed using GitHub Pages.
 
 Steps to Deploy:
-
 Push the project to GitHub.
-
 Go to Repository Settings.
-
 Enable GitHub Pages.
 
 Select the main branch as the source
